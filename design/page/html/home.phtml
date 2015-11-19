@@ -1,0 +1,7 @@
+<!-- home -->
+
+<?php
+$collection = Mage::getModel('catalog/product')->getCollection();
+foreach ($collection as $product) {
+    $product->getName();
+}

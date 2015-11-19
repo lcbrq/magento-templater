@@ -1,0 +1,34 @@
+<config>
+    <routing>
+        <notfound>
+            <layout>1column.phtml</layout>
+            <template>notfound</template> 
+        </notfound>
+        <index>
+            <layout>1column.phtml</layout>
+            <template>home</template>
+        </index>
+        <product>            
+            <layout>1column.phtml</layout>
+            <template>product</template>
+        </product>
+        <category>            
+            <layout>1column.phtml</layout>
+            <template>category</template>
+        </category>
+        <contacts>            
+            <layout>1column.phtml</layout>
+            <template>contacts</template>
+        </contacts>
+    </routing>
+    <design>
+        <notfound>page/html/404.phtml</notfound>
+        <head>page/html/head.phtml</head>
+        <header>page/html/header.phtml</header>
+        <home>page/html/home.phtml</home>
+        <product>catalog/product/view.phtml</product>
+        <category>catalog/category/view.phtml</category>
+        <contacts>contacts/index.phtml</contacts>
+        <footer>page/html/footer.phtml</footer>;
+    </design>
+</config>
