@@ -42,6 +42,12 @@ class Mage_Core_Model_Design {
                 }
                 include('design' . DS . $this->config->design->$html);
                 break;
+            case 'media':
+                include('design/catalog/product/view/media.phtml');
+                break;
+            case 'upsell_products':
+                include('design/catalog/product/list/upsell.phtml');
+                break;
             default:
                 include('design' . DS . $this->config->design->$html);
                 break;
@@ -57,6 +63,11 @@ class Mage_Core_Model_Design {
     {
         return 'skin' . DS . $file;
     }
+    
+    public function getUrl($url)
+    {
+        return $url;
+    }
 
     public function getProduct()
     {
@@ -65,7 +76,7 @@ class Mage_Core_Model_Design {
 
     public function getRequest()
     {
-        list($module, $controller, $action) = split('[/-]', $_GET['q']);
+        @list($module, $controller, $action) = split('[/-]', $_GET['q']);
         switch ($module) {
             case '':
                 $module = 'index';
