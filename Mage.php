@@ -37,14 +37,23 @@ abstract class Mage {
 
     static function getModel($model)
     {
-        $class = 'Mage_Model_' . ucwords(str_replace('/', '_', $model), '_');
+        $class = 'Mage_Model_' . ucwords(str_replace('/', '_', $model));
         return new $class;
     }
 
     static function getBaseUrl()
     {
+        if (!file_exists('local.xml')) {
+            Mage::throwException('local.xml not found');
+        }
+
         $local = simplexml_load_file('local.xml');
         return $local->url;
     }
 
+    static function throwException($exception){
+        throw new Exception($exception);
+        exit;
+    }
+    
 }
