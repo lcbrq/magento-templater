@@ -29,6 +29,19 @@ class Mage_Core_Model_Design {
     {
         include('design' . DS . $this->layout);
     }
+    
+    public function getBodyClass()
+    {
+        $module = $this->module;
+        $config = $this->config->routing->$module;
+        $class = "";
+
+        if (isset($config->class)) {
+            $class = $config->class;
+        }
+
+        return $class;
+    }
 
     public function getChildHtml($html)
     {

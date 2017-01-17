@@ -4,7 +4,7 @@
         <?php echo $this->getChildHtml('head') ?>
     </head>
 
-    <body>
+    <body class="<?php echo $this->getBodyClass(); ?>">
         <?php echo $this->getChildHtml('header') ?>
         <div class="col-main">
             <?php echo $this->getChildHtml('content') ?>
